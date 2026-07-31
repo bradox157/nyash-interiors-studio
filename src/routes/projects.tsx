@@ -6,13 +6,13 @@ import { projects } from "@/lib/site-data";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Our Projects — Nyash Interiors & Designer Ltd" },
+      { title: "Our Projects — Nyashera Interiors" },
       {
         name: "description",
         content:
-          "Recent interior design and fit-out projects by Nyash Interiors across Nairobi — bedrooms, bathrooms, wardrobes, kitchens and commercial spaces.",
+          "Recent interior design and fit-out projects by Nyashera Interiors across Nairobi — bedrooms, bathrooms, wardrobes, kitchens and commercial spaces.",
       },
-      { property: "og:title", content: "Our Projects — Nyash Interiors" },
+      { property: "og:title", content: "Our Projects — Nyashera Interiors" },
       {
         property: "og:description",
         content: "A look at homes and workspaces we have designed and built in Nairobi.",
