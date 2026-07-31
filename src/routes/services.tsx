@@ -7,13 +7,13 @@ import { services } from "@/lib/site-data";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "What We Do — Interior Design Services in Nairobi | Nyash Interiors" },
+      { title: "What We Do — Interior Design Services in Nairobi | Nyashera Interiors" },
       {
         name: "description",
         content:
           "Bedroom, bathroom and wardrobe design, cabinetry and hardware, appliance selection, commercial interiors and custom art selection in Nairobi.",
       },
-      { property: "og:title", content: "Interior Design Services — Nyash Interiors" },
+      { property: "og:title", content: "Interior Design Services — Nyashera Interiors" },
       {
         property: "og:description",
         content: "Full-service interior design, joinery and fit-out from our Kamiti Rd workshop.",
