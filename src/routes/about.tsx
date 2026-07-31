@@ -1,9 +1,33 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CheckCircle2 } from "lucide-react";
+import {
+  Calculator,
+  CalendarClock,
+  ClipboardCheck,
+  ClipboardList,
+  FileText,
+  LayoutGrid,
+  Package,
+  ShieldAlert,
+  ShieldCheck,
+  Users,
+} from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { contractorRoles, specializations, stats } from "@/lib/site-data";
 import aboutImage from "@/assets/about.jpg";
+
+const roleIcons = [
+  ClipboardList,
+  LayoutGrid,
+  FileText,
+  Calculator,
+  Package,
+  ShieldCheck,
+  Users,
+  CalendarClock,
+  ShieldAlert,
+  ClipboardCheck,
+];
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -118,28 +142,42 @@ function AboutPage() {
             eyebrow="Scope of our work"
             title="Roles of an Interior Designer as a Contractor"
           />
-          <ul className="mx-auto mt-14 grid max-w-4xl gap-x-10 gap-y-4 sm:grid-cols-2">
-            {contractorRoles.map((role) => (
-              <li key={role} className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" strokeWidth={1.5} />
-                <span className="font-body text-base text-muted-foreground">{role}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {contractorRoles.map((role, i) => {
+              const Icon = roleIcons[i] ?? ClipboardList;
+              return (
+                <div
+                  key={role}
+                  className="group relative flex flex-col gap-4 border border-border bg-background p-6 transition-colors hover:border-accent"
+                >
+                  <span className="absolute right-4 top-3 font-display text-3xl text-accent/15">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <Icon
+                    className="h-7 w-7 text-accent transition-transform group-hover:scale-110"
+                    strokeWidth={1.3}
+                  />
+                  <p className="font-display text-base leading-snug text-primary">{role}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       <section className="px-6 py-20 md:py-28">
         <div className="mx-auto max-w-[1400px]">
           <SectionHeading eyebrow="Where we work" title="Areas of Specialization" />
-          <ul className="mx-auto mt-14 grid max-w-4xl gap-x-10 gap-y-4 sm:grid-cols-2">
+          <div className="mx-auto mt-14 flex max-w-4xl flex-wrap justify-center gap-3">
             {specializations.map((s) => (
-              <li key={s} className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" strokeWidth={1.5} />
-                <span className="font-body text-base text-muted-foreground">{s}</span>
-              </li>
+              <span
+                key={s}
+                className="rounded-full border border-accent/40 bg-accent/5 px-5 py-2.5 font-body text-sm text-primary transition-colors hover:border-accent hover:bg-accent hover:text-accent-foreground"
+              >
+                {s}
+              </span>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
     </>
