@@ -140,11 +140,11 @@ function HomePage() {
           <div className="mt-14 grid items-start gap-14 lg:grid-cols-2">
             <img
               src={aboutImage}
-              alt="Nyashera Interiors designer reviewing drawings and material samples"
+              alt="Director of Nyashera Interiors"
               width={1200}
               height={900}
               loading="lazy"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-top"
             />
             <Accordion type="single" collapsible defaultValue="vision" className="w-full">
               <AccordionItem value="vision" className="border-none">
