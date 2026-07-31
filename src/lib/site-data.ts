@@ -9,8 +9,8 @@ import project5 from "@/assets/project-5.jpg";
 import project6 from "@/assets/project-6.jpg";
 
 export const business = {
-  name: "Nyash Interiors & Designer Ltd",
-  shortName: "Nyash Interiors",
+  name: "Nyashera Interiors",
+  shortName: "Nyashera Interiors",
   tagline: "Interior Design & Bespoke Fit-Out",
   phone: "0723 624854",
   phoneHref: "tel:+254723624854",
@@ -20,12 +20,12 @@ export const business = {
   hours: "Mon – Sat · 8:00 am – 5:00 pm",
   rating: 4.7,
   reviewCount: 3,
-  googleReviewUrl: "https://www.google.com/search?q=Nyash+Interiors+%26+Designer+Ltd",
+  googleReviewUrl: "https://www.google.com/search?q=Nyashera+Interiors+%26+Designer+Ltd",
 };
 
 export const navLinks = [
   { label: "Home", to: "/" },
-  { label: "About Nyash Interiors", to: "/about" },
+  { label: "About Nyashera Interiors", to: "/about" },
   { label: "What We Do?", to: "/services" },
   { label: "Our Projects", to: "/projects" },
   { label: "FAQs", to: "/faqs" },
@@ -36,7 +36,7 @@ export const navLinks = [
 export const heroSlides = [
   {
     image: hero1,
-    eyebrow: "Nyash Interiors & Designer Ltd",
+    eyebrow: "Nyashera Interiors",
     title: "Transforming",
     highlight: "Spaces into timeless\nmasterpieces.",
   },
@@ -50,7 +50,7 @@ export const heroSlides = [
     image: hero3,
     eyebrow: "Hi There! 👋",
     title: "Welcome to",
-    highlight: "Nyash Interiors &\nDesigner Ltd",
+    highlight: "Nyashera Interiors &\nDesigner Ltd",
   },
 ];
 
@@ -154,7 +154,7 @@ export const reviews = [
   {
     name: "Peter K.",
     stars: 5,
-    text: "Nyash redesigned our office reception. The joinery finish is excellent and clients keep commenting on the space.",
+    text: "Nyashera redesigned our office reception. The joinery finish is excellent and clients keep commenting on the space.",
   },
   {
     name: "Aisha N.",
@@ -191,7 +191,7 @@ export const faqs = [
 ];
 
 export const galleryImages = [
-  { src: hero1, alt: "Navy and gold living room designed by Nyash Interiors" },
+  { src: hero1, alt: "Navy and gold living room designed by Nyashera Interiors" },
   { src: project2, alt: "Marble bathroom with brass fittings" },
   { src: hero2, alt: "Walk-in wardrobe with warm timber veneer" },
   { src: project1, alt: "Upholstered headboard master bedroom" },
