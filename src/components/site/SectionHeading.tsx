@@ -5,12 +5,14 @@ export function SectionHeading({
   title,
   align = "center",
   light = false,
+  titleClassName,
   children,
 }: {
   eyebrow?: string;
   title: ReactNode;
   align?: "center" | "left";
   light?: boolean;
+  titleClassName?: string;
   children?: ReactNode;
 }) {
   return (
@@ -26,7 +28,7 @@ export function SectionHeading({
       ) : null}
       <h2
         className={`mt-4 font-display text-3xl leading-tight sm:text-4xl md:text-[2.75rem] ${
-          light ? "text-primary-foreground" : "text-primary"
+          titleClassName ?? (light ? "text-primary-foreground" : "text-primary")
         }`}
       >
         {title}
