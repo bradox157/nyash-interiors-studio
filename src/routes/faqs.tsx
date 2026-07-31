@@ -11,13 +11,13 @@ import { faqs } from "@/lib/site-data";
 export const Route = createFileRoute("/faqs")({
   head: () => ({
     meta: [
-      { title: "FAQs — Working With Nyash Interiors & Designer Ltd" },
+      { title: "FAQs — Working With Nyashera Interiors" },
       {
         name: "description",
         content:
           "Common questions about our interior design process, timelines, pricing and areas served in Nairobi.",
       },
-      { property: "og:title", content: "FAQs — Nyash Interiors" },
+      { property: "og:title", content: "FAQs — Nyashera Interiors" },
       {
         property: "og:description",
         content: "How our design, joinery and fit-out process works from first call to handover.",
