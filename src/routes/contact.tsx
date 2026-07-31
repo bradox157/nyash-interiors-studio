@@ -9,13 +9,13 @@ import { business, services } from "@/lib/site-data";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Nyash Interiors & Designer Ltd — Kamiti Rd, Nairobi" },
+      { title: "Contact Nyashera Interiors — Kamiti Rd, Nairobi" },
       {
         name: "description",
         content:
-          "Call 0723 624854 or send us a message. Nyash Interiors & Designer Ltd, Kamiti Rd, Nairobi. Open Mon–Sat, closes 5 pm.",
+          "Call 0723 624854 or send us a message. Nyashera Interiors, Kamiti Rd, Nairobi. Open Mon–Sat, closes 5 pm.",
       },
-      { property: "og:title", content: "Contact Nyash Interiors & Designer Ltd" },
+      { property: "og:title", content: "Contact Nyashera Interiors" },
       {
         property: "og:description",
         content: "Book a consultation for your home or commercial interior in Nairobi.",
@@ -37,7 +37,7 @@ function ContactPage() {
       <section className="px-6 py-20 md:py-28">
         <div className="mx-auto grid max-w-[1400px] gap-14 lg:grid-cols-2">
           <div>
-            <SectionHeading align="left" eyebrow="Visit or call" title="Nyash Interiors & Designer Ltd">
+            <SectionHeading align="left" eyebrow="Visit or call" title="Nyashera Interiors">
               <p>
                 Tell us about your space — a room, a whole home or a commercial fit-out — and we’ll
                 come back with next steps.
@@ -69,7 +69,7 @@ function ContactPage() {
 
             <div className="mt-10 overflow-hidden border border-border">
               <iframe
-                title="Map showing Nyash Interiors on Kamiti Rd, Nairobi"
+                title="Map showing Nyashera Interiors on Kamiti Rd, Nairobi"
                 src="https://www.google.com/maps?q=Kamiti%20Road%2C%20Nairobi%2C%20Kenya&output=embed"
                 className="h-72 w-full"
                 loading="lazy"
