@@ -54,11 +54,11 @@ function AboutPage() {
         <div className="mx-auto grid max-w-[1400px] items-center gap-14 lg:grid-cols-2">
           <img
             src={aboutImage}
-            alt="Interior designer at Nyashera Interiors working on plans"
+            alt="Director of Nyashera Interiors"
             width={1200}
             height={900}
             loading="lazy"
-            className="w-full object-cover"
+            className="w-full object-cover object-top"
           />
           <SectionHeading
             align="left"
