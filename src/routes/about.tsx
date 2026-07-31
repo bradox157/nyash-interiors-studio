@@ -7,13 +7,13 @@ import aboutImage from "@/assets/about.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Nyash Interiors & Designer Ltd — Nairobi" },
+      { title: "About Nyashera Interiors — Nairobi" },
       {
         name: "description",
         content:
-          "Meet Nyash Interiors & Designer Ltd, an interior design and joinery practice on Kamiti Rd, Nairobi, delivering residential and commercial interiors.",
+          "Meet Nyashera Interiors, an interior design and joinery practice on Kamiti Rd, Nairobi, delivering residential and commercial interiors.",
       },
-      { property: "og:title", content: "About Nyash Interiors & Designer Ltd" },
+      { property: "og:title", content: "About Nyashera Interiors" },
       {
         property: "og:description",
         content: "Our story, vision and mission as a Nairobi interior design and fit-out team.",
@@ -47,13 +47,13 @@ const values = [
 function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="Who we are" title="About Nyash Interiors" />
+      <PageHero eyebrow="Who we are" title="About Nyashera Interiors" />
 
       <section className="px-6 py-20 md:py-28">
         <div className="mx-auto grid max-w-[1400px] items-center gap-14 lg:grid-cols-2">
           <img
             src={aboutImage}
-            alt="Interior designer at Nyash Interiors working on plans"
+            alt="Interior designer at Nyashera Interiors working on plans"
             width={1200}
             height={900}
             loading="lazy"
@@ -65,7 +65,7 @@ function AboutPage() {
             title="A Nairobi practice built around craft"
           >
             <p>
-              Nyash Interiors &amp; Designer Ltd works out of Kamiti Rd, Nairobi, designing and
+              Nyashera Interiors works out of Kamiti Rd, Nairobi, designing and
               building interiors for homes, offices and commercial spaces. What started as a small
               joinery and design outfit now handles complete fit-outs — space planning, bespoke
               cabinetry, finishes, appliances and styling.
