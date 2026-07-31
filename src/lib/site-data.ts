@@ -190,6 +190,37 @@ export const faqs = [
   },
 ];
 
+export const contractorRoles = [
+  "Project planning and design",
+  "Space planning and functionality",
+  "Preparation of drawings and specifications",
+  "Cost estimation and budgeting",
+  "Material selection and procurement",
+  "Site supervision and quality control",
+  "Coordination of contractors and suppliers",
+  "Project scheduling and management",
+  "Compliance with safety and building regulations",
+  "Final inspection and project handover",
+];
+
+export const specializations = [
+  "Residential interiors",
+  "Commercial and office interiors",
+  "Hospitality (hotels, restaurants, bars)",
+  "Retail and showroom design",
+  "Healthcare facilities",
+  "Educational institutions",
+  "Corporate offices",
+  "Kitchen and wardrobe design",
+  "Custom furniture and cabinetry",
+  "Gypsum ceilings and decorative finishes",
+  "Lighting design",
+  "Flooring and wall finishes",
+  "Renovation and remodeling",
+  "Landscaping and outdoor living spaces",
+  "Turnkey interior fit-out projects",
+];
+
 export const galleryImages = [
   { src: hero1, alt: "Navy and gold living room designed by Nyashera Interiors" },
   { src: project2, alt: "Marble bathroom with brass fittings" },
