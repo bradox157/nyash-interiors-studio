@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { stats } from "@/lib/site-data";
+import { contractorRoles, specializations, stats } from "@/lib/site-data";
 import aboutImage from "@/assets/about.jpg";
 
 export const Route = createFileRoute("/about")({
@@ -108,6 +109,37 @@ function AboutPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-secondary/30 px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-[1400px]">
+          <SectionHeading
+            eyebrow="Scope of our work"
+            title="Roles of an Interior Designer as a Contractor"
+          />
+          <ul className="mx-auto mt-14 grid max-w-4xl gap-x-10 gap-y-4 sm:grid-cols-2">
+            {contractorRoles.map((role) => (
+              <li key={role} className="flex items-start gap-3">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" strokeWidth={1.5} />
+                <span className="font-body text-base text-muted-foreground">{role}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-[1400px]">
+          <SectionHeading eyebrow="Where we work" title="Areas of Specialization" />
+          <ul className="mx-auto mt-14 grid max-w-4xl gap-x-10 gap-y-4 sm:grid-cols-2">
+            {specializations.map((s) => (
+              <li key={s} className="flex items-start gap-3">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" strokeWidth={1.5} />
+                <span className="font-body text-base text-muted-foreground">{s}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>
