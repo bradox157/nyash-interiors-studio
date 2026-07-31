@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Facebook, Instagram, Mail, MapPin, Menu, Phone, Smartphone, X, Youtube } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Menu, Phone, Smartphone, Youtube } from "lucide-react";
 import { business, navLinks } from "@/lib/site-data";
 
 function Logo() {
@@ -60,7 +60,7 @@ export function Header() {
               onClick={() => setOpen((v) => !v)}
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-accent/40 text-accent xl:hidden"
             >
-              {open ? <Menu className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              <Menu className="h-5 w-5" />
             </button>
           </div>
         </div>
@@ -117,7 +117,6 @@ export function Header() {
             </a>
           </span>
           <span className="flex items-center gap-2 font-body text-sm text-muted-foreground">
-            <X className="hidden" />
             <strong className="font-semibold text-primary">Open</strong> · Closes 5 pm
           </span>
         </div>
