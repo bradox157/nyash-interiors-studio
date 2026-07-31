@@ -81,8 +81,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "author", content: "Nyash Interiors & Designer Ltd" },
-      { property: "og:site_name", content: "Nyash Interiors & Designer Ltd" },
+      { name: "author", content: "Nyashera Interiors" },
+      { property: "og:site_name", content: "Nyashera Interiors" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -102,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "Nyash Interiors & Designer Ltd",
+          name: "Nyashera Interiors",
           description:
             "Interior design, bespoke cabinetry and fit-out services in Nairobi, Kenya.",
           telephone: "+254723624854",
