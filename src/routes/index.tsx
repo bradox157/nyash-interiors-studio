@@ -1,5 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Compass, Home as HomeIcon, Layers, Building2, HandCoins, Phone, Star } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { HeroSlider } from "@/components/site/HeroSlider";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { ProjectCard } from "@/components/site/ProjectCard";
@@ -128,9 +134,10 @@ function HomePage() {
         <div className="mx-auto max-w-[1400px]">
           <SectionHeading
             eyebrow="Transforming spaces into masterpieces"
-            title="An interior design & fit-out team built on craft and detail"
+            title="We are an award-winning interior design & construction team in Nairobi"
+            titleClassName="font-semibold text-accent"
           />
-          <div className="mt-14 grid items-center gap-14 lg:grid-cols-2">
+          <div className="mt-14 grid items-start gap-14 lg:grid-cols-2">
             <img
               src={aboutImage}
               alt="Nyashera Interiors designer reviewing drawings and material samples"
@@ -139,25 +146,27 @@ function HomePage() {
               loading="lazy"
               className="h-full w-full object-cover"
             />
-            <div className="space-y-10">
-              <div>
-                <h3 className="font-display text-2xl text-primary">Vision statement</h3>
-                <span className="mt-3 block h-px w-16 bg-accent" />
-                <p className="mt-4 font-body leading-relaxed text-muted-foreground">
+            <Accordion type="single" collapsible defaultValue="vision" className="w-full">
+              <AccordionItem value="vision" className="border-none">
+                <AccordionTrigger className="bg-accent px-6 py-5 font-display text-lg font-semibold text-accent-foreground hover:no-underline [&>svg]:text-accent-foreground">
+                  Vision statement
+                </AccordionTrigger>
+                <AccordionContent className="border border-t-0 border-border bg-background px-6 pb-6 pt-4 font-body leading-relaxed text-muted-foreground">
                   Transforming everyday Kenyan spaces into timeless, comfortable and beautifully
                   made interiors.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-display text-2xl text-primary">Mission statement</h3>
-                <span className="mt-3 block h-px w-16 bg-accent" />
-                <p className="mt-4 font-body leading-relaxed text-muted-foreground">
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="mission" className="mt-3 border-none">
+                <AccordionTrigger className="bg-accent px-6 py-5 font-display text-lg font-semibold text-accent-foreground hover:no-underline [&>svg]:text-accent-foreground">
+                  Mission statement
+                </AccordionTrigger>
+                <AccordionContent className="border border-t-0 border-border bg-background px-6 pb-6 pt-4 font-body leading-relaxed text-muted-foreground">
                   To design and deliver high-quality, honestly priced interiors — combining
-                  thoughtful design, our own joinery workshop and careful project management so that
-                  every client gets a space that works as well as it looks.
-                </p>
-              </div>
-            </div>
+                  thoughtful design, our own joinery workshop and careful project management so
+                  that every client gets a space that works as well as it looks.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
