@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Phone, Star } from "lucide-react";
+import { ArrowRight, Compass, Home as HomeIcon, Layers, Building2, HandCoins, Phone, Star } from "lucide-react";
 import { HeroSlider } from "@/components/site/HeroSlider";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { ProjectCard } from "@/components/site/ProjectCard";
@@ -9,13 +9,13 @@ import aboutImage from "@/assets/about.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nyash Interiors & Designer Ltd — Interior Design in Nairobi" },
+      { title: "Nyashera Interiors — Interior Design in Nairobi" },
       {
         name: "description",
         content:
           "Interior design, bespoke cabinetry, wardrobes and full fit-out for homes and businesses. Kamiti Rd, Nairobi. Rated 4.7 on Google.",
       },
-      { property: "og:title", content: "Nyash Interiors & Designer Ltd — Interior Design in Nairobi" },
+      { property: "og:title", content: "Nyashera Interiors — Interior Design in Nairobi" },
       {
         property: "og:description",
         content:
@@ -50,16 +50,20 @@ function HomePage() {
       <section className="px-6 py-20 md:py-28">
         <div className="mx-auto grid max-w-[1400px] items-center gap-14 lg:grid-cols-2">
           <div>
+            <Compass className="h-9 w-9 text-accent" strokeWidth={1.2} />
             <SectionHeading
               align="left"
               eyebrow="Transforming spaces into masterpieces"
-              title={<>Welcome to Nyash Interiors &amp; Designer Ltd</>}
+              title={<>Welcome to Nyashera Interiors</>}
+              titleClassName="text-accent"
             >
               <p>
-                Nyash Interiors &amp; Designer Ltd is a Nairobi-based interior design and fit-out
-                practice working from Kamiti Rd. We design and build residential and commercial
-                interiors — from a single bedroom or bathroom through to complete homes, offices and
-                showrooms.
+                <strong className="font-semibold text-primary">Nyashera Interiors</strong> is a{" "}
+                <strong className="font-semibold text-primary">Nairobi-based</strong> interior
+                design and fit-out practice working from{" "}
+                <strong className="font-semibold text-primary">Kamiti Rd</strong>. We design and
+                build residential and commercial interiors — from a single bedroom or bathroom
+                through to complete homes, offices and showrooms.
               </p>
               <p className="mt-4">
                 Our work covers space planning, bespoke cabinetry and wardrobes, appliance and
@@ -85,14 +89,23 @@ function HomePage() {
             </div>
           </div>
 
-          <ul className="divide-y divide-border border-y border-border">
-            {pillars.map((p) => (
-              <li key={p.number} className="flex items-center justify-between gap-6 py-7">
-                <h3 className="font-display text-2xl text-primary">{p.title}</h3>
-                <span className="font-display text-4xl text-accent/60">{p.number}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="grid grid-cols-1 gap-px overflow-hidden border border-border bg-border sm:grid-cols-2">
+            {pillars.map((p, i) => {
+              const Icon = [HomeIcon, Layers, Building2, HandCoins][i] ?? HomeIcon;
+              return (
+                <div
+                  key={p.number}
+                  className="relative flex flex-col gap-4 bg-background p-8"
+                >
+                  <span className="absolute right-5 top-3 font-display text-5xl text-accent/15">
+                    {p.number}
+                  </span>
+                  <Icon className="h-8 w-8 text-accent" strokeWidth={1.2} />
+                  <h3 className="font-display text-xl leading-snug text-primary">{p.title}</h3>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -120,7 +133,7 @@ function HomePage() {
           <div className="mt-14 grid items-center gap-14 lg:grid-cols-2">
             <img
               src={aboutImage}
-              alt="Nyash Interiors designer reviewing drawings and material samples"
+              alt="Nyashera Interiors designer reviewing drawings and material samples"
               width={1200}
               height={900}
               loading="lazy"
@@ -152,7 +165,7 @@ function HomePage() {
       {/* Featured projects */}
       <section className="bg-secondary px-6 py-20 md:py-28">
         <div className="mx-auto max-w-[1400px]">
-          <SectionHeading eyebrow="Popular projects @Nyash Interiors" title="Featured Projects" />
+          <SectionHeading eyebrow="Popular projects @Nyashera Interiors" title="Featured Projects" />
           <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects.slice(0, 6).map((p) => (
               <ProjectCard key={p.title} {...p} />
