@@ -10,7 +10,7 @@ function Logo() {
         NI
       </span>
       <span className="mt-2 font-display text-[0.65rem] uppercase tracking-[0.32em] text-primary-foreground">
-        Nyash Interiors
+        Nyashera Interiors
       </span>
     </Link>
   );
