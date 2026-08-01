@@ -9,7 +9,8 @@ import {
 import { HeroSlider } from "@/components/site/HeroSlider";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { ProjectCard } from "@/components/site/ProjectCard";
-import { business, pillars, projects, reviews, services, stats } from "@/lib/site-data";
+import { MarqueeStrip } from "@/components/site/MarqueeStrip";
+import { business, galleryImages, pillars, projects, reviews, services, stats } from "@/lib/site-data";
 import aboutImage from "@/assets/about.jpg";
 
 export const Route = createFileRoute("/")({
@@ -172,12 +173,17 @@ function HomePage() {
       </section>
 
       {/* Featured projects */}
-      <section className="bg-secondary px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-[1400px]">
+      <section className="bg-secondary py-20 md:py-28">
+        <div className="mx-auto max-w-[1400px] px-6">
           <SectionHeading eyebrow="Popular projects @Nyashera Interiors" title="Featured Projects" />
-          <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {projects.slice(0, 6).map((p) => (
-              <ProjectCard key={p.title} {...p} />
+        </div>
+        <div className="mt-12">
+          <MarqueeStrip images={projects.slice(0, 6).map((p) => ({ src: p.image, alt: p.title }))} />
+        </div>
+        <div className="mx-auto max-w-[1400px] px-6">
+          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {projects.slice(0, 6).map((p, i) => (
+              <ProjectCard key={p.title} {...p} index={i} />
             ))}
           </div>
           <div className="mt-12 text-center">
@@ -266,6 +272,35 @@ function HomePage() {
                 </blockquote>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery preview */}
+      <section className="px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-[1400px]">
+          <div className="text-center">
+            <Compass className="mx-auto h-9 w-9 text-accent" strokeWidth={1.2} />
+            <SectionHeading eyebrow="Have a look at some of our work" title="Our Gallery" />
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {galleryImages.slice(0, 4).map((img) => (
+              <img
+                key={img.alt}
+                src={img.src}
+                alt={img.alt}
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover"
+              />
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-3 bg-accent px-8 py-4 font-body text-xs uppercase tracking-[0.2em] text-accent-foreground transition-opacity hover:opacity-90"
+            >
+              See Full Gallery Here <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
