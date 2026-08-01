@@ -14,7 +14,7 @@ export function MarqueeStrip({ images }: { images: { src: string; alt: string }[
               src={img.src}
               alt={img.alt}
               loading="lazy"
-              className="h-full w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
+              className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
             />
           </div>
         ))}
