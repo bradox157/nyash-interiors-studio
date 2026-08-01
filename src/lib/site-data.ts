@@ -1,12 +1,7 @@
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
-import project4 from "@/assets/project-4.jpg";
-import project5 from "@/assets/project-5.jpg";
-import project6 from "@/assets/project-6.jpg";
+// All real project photography lives in /public/gallery — referenced by plain
+// path, not import, so adding new photos later is just: drop the file in
+// public/gallery/ and add one line below. No code changes needed elsewhere.
+const g = (file: string) => `/gallery/${file}`;
 
 export const business = {
   name: "Nyashera Interiors",
@@ -35,19 +30,19 @@ export const navLinks = [
 
 export const heroSlides = [
   {
-    image: hero1,
+    image: g("01-home-bar.jpg"),
     eyebrow: "Nyashera Interiors",
     title: "Transforming",
     highlight: "Spaces into timeless\nmasterpieces.",
   },
   {
-    image: hero2,
+    image: g("10-herringbone-living-room.jpg"),
     eyebrow: "Perfectly balanced luxury, functionality, & personal expression.",
     title: "Tailored solutions that",
     highlight: "Honour unique\nlifestyles & preferences",
   },
   {
-    image: hero3,
+    image: g("03-living-room-chandelier.jpg"),
     eyebrow: "Hi There! 👋",
     title: "Welcome to",
     highlight: "Nyashera Interiors &\nDesigner Ltd",
@@ -108,39 +103,39 @@ export const services = [
 
 export const projects = [
   {
-    image: project1,
-    title: "Master bedroom refurbishment in Runda",
-    meta: ["1,800 – 2,500 sq ft.", "Bedroom Design"],
+    image: g("01-home-bar.jpg"),
+    title: "Home bar & entertaining nook",
+    meta: ["Custom Joinery", "Lighting Design"],
     rating: "10.0",
   },
   {
-    image: project2,
-    title: "Marble en-suite bathroom, Kileleshwa apartment",
+    image: g("15-marble-bathroom.jpg"),
+    title: "Marble bathroom with backlit ceiling",
     meta: ["Bathroom Design", "Full Fit-Out"],
     rating: "10.0",
   },
   {
-    image: project3,
-    title: "Open-plan dining & living, Thika Road residence",
-    meta: ["2,500 – 4,000+ sq ft.", "Interior Decor"],
+    image: g("06-walnut-kitchen.jpg"),
+    title: "Walnut kitchen with black stone counters",
+    meta: ["Kitchen Design", "Cabinetry & Hardware"],
     rating: "10.0",
   },
   {
-    image: project4,
-    title: "Corporate reception fit-out along Kamiti Rd",
-    meta: ["Commercial", "Joinery & Branding"],
+    image: g("08-fluted-tv-wall.jpg"),
+    title: "Fluted media wall with backlit shelving",
+    meta: ["Living Room", "Custom Joinery"],
     rating: "9.8",
   },
   {
-    image: project5,
-    title: "Fitted wardrobes for a family home in Ruiru",
-    meta: ["Wardrobe Design", "Custom Cabinetry"],
+    image: g("07-kitchen-island.jpg"),
+    title: "Kitchen island in walnut & marble",
+    meta: ["Kitchen Design", "Appliance Selection"],
     rating: "10.0",
   },
   {
-    image: project6,
-    title: "Art curation & styling, Nairobi townhouse",
-    meta: ["Custom Art Selection", "Styling"],
+    image: g("11-herringbone-hallway.jpg"),
+    title: "Herringbone hallway & statement lighting",
+    meta: ["Interior Decor", "Lighting Design"],
     rating: "10.0",
   },
 ];
@@ -221,14 +216,22 @@ export const specializations = [
   "Turnkey interior fit-out projects",
 ];
 
+// Add future photos here — drop the file in public/gallery/ then add one
+// line below. Currently 15; target is 30+, more to come.
 export const galleryImages = [
-  { src: hero1, alt: "Navy and gold living room designed by Nyashera Interiors" },
-  { src: project2, alt: "Marble bathroom with brass fittings" },
-  { src: hero2, alt: "Walk-in wardrobe with warm timber veneer" },
-  { src: project1, alt: "Upholstered headboard master bedroom" },
-  { src: hero3, alt: "Dark navy kitchen with marble island" },
-  { src: project3, alt: "Open plan dining area with chandelier" },
-  { src: project5, alt: "Fitted wardrobe in a family bedroom" },
-  { src: project6, alt: "Living room with curated gallery wall" },
-  { src: project4, alt: "Commercial reception interior" },
+  { src: g("01-home-bar.jpg"), alt: "Home bar with backlit glass display and burgundy cabinetry" },
+  { src: g("02-marble-hallway.jpg"), alt: "Marble-tiled hallway with high-gloss black wardrobe" },
+  { src: g("03-living-room-chandelier.jpg"), alt: "Living room with crystal chandelier and glass display cabinetry" },
+  { src: g("04-kitchen-breakfast-bar.jpg"), alt: "Open kitchen with breakfast bar and backlit glass display" },
+  { src: g("05-kitchen-slat-bench.jpg"), alt: "Kitchen nook with slatted wood bench seating" },
+  { src: g("06-walnut-kitchen.jpg"), alt: "Kitchen with walnut cabinetry and black stone countertops" },
+  { src: g("07-kitchen-island.jpg"), alt: "Kitchen island with slatted wood base and marble flooring" },
+  { src: g("08-fluted-tv-wall.jpg"), alt: "Fluted TV feature wall with backlit glass shelving" },
+  { src: g("09-dark-tv-wall.jpg"), alt: "Dark panelled TV wall with warm backlighting" },
+  { src: g("10-herringbone-living-room.jpg"), alt: "Living room with herringbone wood ceiling and garden view" },
+  { src: g("11-herringbone-hallway.jpg"), alt: "Hallway with herringbone flooring and statement pendant light" },
+  { src: g("12-curved-tv-wall.jpg"), alt: "Curved ceiling TV wall with ribbed panelling" },
+  { src: g("13-amber-kitchen-display.jpg"), alt: "Kitchen with amber backlit display cabinetry" },
+  { src: g("14-cream-kitchen.jpg"), alt: "Kitchen with cream shaker cabinetry and linear ceiling lighting" },
+  { src: g("15-marble-bathroom.jpg"), alt: "Bathroom with marble walls and backlit lattice ceiling" },
 ];
