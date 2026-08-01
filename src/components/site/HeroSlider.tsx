@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { heroSlides } from "@/lib/site-data";
+import { LiquidBackdrop } from "@/components/site/LiquidBackdrop";
 
 export function HeroSlider() {
   const [index, setIndex] = useState(0);
@@ -33,7 +34,7 @@ export function HeroSlider() {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-primary/70" />
-          <div className="absolute inset-0 flex items-center">
+          <div className="absolute inset-0 z-10 flex items-center">
             <div className="mx-auto w-full max-w-[1600px] px-6">
               <div className="max-w-2xl">
                 <p className="font-body text-xs uppercase tracking-[0.3em] text-accent">
@@ -56,6 +57,8 @@ export function HeroSlider() {
           </div>
         </div>
       ))}
+
+      <LiquidBackdrop />
 
       <button
         type="button"
