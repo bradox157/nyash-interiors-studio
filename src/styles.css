@@ -173,3 +173,81 @@
   }
 }
 
+/* Liquid ambient backdrop — slow drifting marbled light, used once as the
+   site's signature motion moment in the hero. */
+@keyframes liquid-drift-a {
+  0% {
+    transform: translate3d(-6%, -4%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, 6%, 0) scale(1.15);
+  }
+  100% {
+    transform: translate3d(-6%, -4%, 0) scale(1);
+  }
+}
+
+@keyframes liquid-drift-b {
+  0% {
+    transform: translate3d(5%, 3%, 0) scale(1.1);
+  }
+  50% {
+    transform: translate3d(-5%, -6%, 0) scale(0.95);
+  }
+  100% {
+    transform: translate3d(5%, 3%, 0) scale(1.1);
+  }
+}
+
+@keyframes liquid-drift-c {
+  0% {
+    transform: translate3d(0%, 6%, 0) scale(0.9) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(-3%, -3%, 0) scale(1.05) rotate(8deg);
+  }
+  100% {
+    transform: translate3d(0%, 6%, 0) scale(0.9) rotate(0deg);
+  }
+}
+
+.liquid-blob-a {
+  animation: liquid-drift-a 22s ease-in-out infinite;
+}
+.liquid-blob-b {
+  animation: liquid-drift-b 26s ease-in-out infinite;
+}
+.liquid-blob-c {
+  animation: liquid-drift-c 30s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-blob-a,
+  .liquid-blob-b,
+  .liquid-blob-c {
+    animation: none;
+  }
+}
+
+/* Scroll reveal — quiet fade + rise used on grid items throughout the site. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
