@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { ProjectCard } from "@/components/site/ProjectCard";
+import { ExhibitCard } from "@/components/site/ExhibitCard";
+import { MarqueeStrip } from "@/components/site/MarqueeStrip";
 import { projects } from "@/lib/site-data";
 
 export const Route = createFileRoute("/projects")({
@@ -28,10 +29,13 @@ function ProjectsPage() {
   return (
     <>
       <PageHero eyebrow="Selected work" title="Our Projects" />
+
+      <MarqueeStrip images={projects.map((p) => ({ src: p.image, alt: p.title }))} />
+
       <section className="px-6 py-20 md:py-28">
-        <div className="mx-auto grid max-w-[1400px] gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
-            <ProjectCard key={p.title} {...p} />
+        <div className="mx-auto max-w-[1300px]">
+          {projects.map((p, i) => (
+            <ExhibitCard key={p.title} {...p} index={i} reverse={i % 2 === 1} />
           ))}
         </div>
       </section>
