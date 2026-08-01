@@ -7,10 +7,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { HeroSlider } from "@/components/site/HeroSlider";
+import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import { MarqueeStrip } from "@/components/site/MarqueeStrip";
 import { business, galleryImages, pillars, projects, reviews, services, stats } from "@/lib/site-data";
+import { cn } from "@/lib/utils";
 import aboutImage from "@/assets/about.jpg";
 
 export const Route = createFileRoute("/")({
@@ -79,7 +81,7 @@ function HomePage() {
               </p>
             </SectionHeading>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a
+              
                 href={business.whatsapp}
                 target="_blank"
                 rel="noreferrer"
@@ -87,7 +89,7 @@ function HomePage() {
               >
                 Ready to get started? <ArrowRight className="h-4 w-4" />
               </a>
-              <a
+              
                 href={business.phoneHref}
                 className="inline-flex items-center gap-3 border border-primary px-8 py-4 font-body text-xs uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
               >
@@ -202,17 +204,30 @@ function HomePage() {
         <div className="mx-auto max-w-[1400px]">
           <SectionHeading eyebrow="What we do" title="Our Services" />
           <div className="mt-14 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s, i) => (
-              <div key={s.title} className="bg-background p-9">
-                <span className="font-display text-3xl text-accent/50">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-4 font-display text-xl text-primary">{s.title}</h3>
-                <p className="mt-3 font-body text-sm leading-relaxed text-muted-foreground">
-                  {s.description}
-                </p>
-              </div>
-            ))}
+            {services.map((s, i) => {
+              const isLast = i === services.length - 1;
+              const orphanedSm = isLast && services.length % 2 === 1;
+              const orphanedLg = isLast && services.length % 3 === 1;
+              return (
+                <Reveal
+                  key={s.title}
+                  delay={(i % 3) * 90}
+                  className={cn(
+                    "bg-background p-9",
+                    orphanedSm && "sm:col-span-2",
+                    orphanedLg && "lg:col-span-3",
+                  )}
+                >
+                  <span className="font-display text-3xl text-accent/50">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-4 font-display text-xl text-primary">{s.title}</h3>
+                  <p className="mt-3 max-w-md font-body text-sm leading-relaxed text-muted-foreground">
+                    {s.description}
+                  </p>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -248,7 +263,7 @@ function HomePage() {
                   </div>
                 ))}
               </div>
-              <a
+              
                 href={business.googleReviewUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -266,7 +281,7 @@ function HomePage() {
                 >
                   <Stars count={r.stars} />
                   <p className="mt-4 font-body text-sm leading-relaxed text-primary-foreground/75">
-                    “{r.text}”
+                    "{r.text}"
                   </p>
                   <footer className="mt-5 font-display text-lg text-accent">{r.name}</footer>
                 </blockquote>
@@ -309,7 +324,7 @@ function HomePage() {
       <section className="px-6 py-20">
         <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-8 border border-accent/40 bg-card p-12">
           <div>
-            <h2 className="font-display text-3xl text-primary">Let’s design your space</h2>
+            <h2 className="font-display text-3xl text-primary">Let's design your space</h2>
             <p className="mt-3 font-body text-muted-foreground">
               Kamiti Rd, Nairobi · Open · Closes 5 pm
             </p>
