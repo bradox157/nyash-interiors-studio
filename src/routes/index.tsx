@@ -81,7 +81,7 @@ function HomePage() {
               </p>
             </SectionHeading>
             <div className="mt-8 flex flex-wrap gap-4">
-              
+              <a
                 href={business.whatsapp}
                 target="_blank"
                 rel="noreferrer"
@@ -89,7 +89,7 @@ function HomePage() {
               >
                 Ready to get started? <ArrowRight className="h-4 w-4" />
               </a>
-              
+              <a
                 href={business.phoneHref}
                 className="inline-flex items-center gap-3 border border-primary px-8 py-4 font-body text-xs uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
               >
@@ -263,7 +263,7 @@ function HomePage() {
                   </div>
                 ))}
               </div>
-              
+              <a
                 href={business.googleReviewUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -281,7 +281,7 @@ function HomePage() {
                 >
                   <Stars count={r.stars} />
                   <p className="mt-4 font-body text-sm leading-relaxed text-primary-foreground/75">
-                    "{r.text}"
+                    “{r.text}”
                   </p>
                   <footer className="mt-5 font-display text-lg text-accent">{r.name}</footer>
                 </blockquote>
@@ -324,7 +324,7 @@ function HomePage() {
       <section className="px-6 py-20">
         <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-8 border border-accent/40 bg-card p-12">
           <div>
-            <h2 className="font-display text-3xl text-primary">Let's design your space</h2>
+            <h2 className="font-display text-3xl text-primary">Let’s design your space</h2>
             <p className="mt-3 font-body text-muted-foreground">
               Kamiti Rd, Nairobi · Open · Closes 5 pm
             </p>
